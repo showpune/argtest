@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: args-app
+spec:
+  template:
+    spec:
+      containers:
+        - name: args-app
+          image: showpune/args-app:latest
+          args: ["arg1","arg2"]
+      restartPolicy: Never
+  backoffLimit: 4
